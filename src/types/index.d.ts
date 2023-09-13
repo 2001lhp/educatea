@@ -7,7 +7,7 @@ export type List = {
     }[]
 }
 
-export type SearchConfig = {
+export type PageConfig = {
     current: number
     size: number
     categoryId?: number

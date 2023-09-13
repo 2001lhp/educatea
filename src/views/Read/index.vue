@@ -10,12 +10,12 @@ const current = ref(1)
 const id = ref(0)
 getList().then(res => {
     console.log(res.data)
-    tab.value = res.data.data
+    tab.value = res.data
 })
 const getdata = async () => {
     const res = await search({ current: current.value, size: 10, categoryId: id.value })
-    console.log(res.data.data.records)
-    list.value = res.data.data.records
+    console.log(res.data.records)
+    list.value = res.data.records
 }
 const change = (e: number) => {
     id.value = e
@@ -27,12 +27,13 @@ const refreshing = ref(false);
 
 const onLoad = async () => {
     const res = await search({ current: current.value, size: 10, categoryId: id.value })
-    list.value.push(...res.data.data.records)
-    if (list.value.length >= res.data.data.total) {
+    list.value.push(...res.data.records)
+    if (list.value.length >= res.data.total) {
         finished.value = true
     } else {
         current.value++
         loading.value = false
+        refreshing.value = false
     }
 };
 

@@ -6,7 +6,7 @@ const list = ref<List[]>([])
 const active = ref(0)
 getList().then(res => {
     console.log(res.data)
-    list.value = res.data.data
+    list.value = res.data
 })
 const change = (e: number) => {
 }
