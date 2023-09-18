@@ -2,11 +2,14 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useCounterStore = defineStore('counter', () => {
-  const count = ref(0)
-  const doubleCount = computed(() => count.value * 2)
-  function increment() {
-    count.value++
-  }
-
-  return { count, doubleCount, increment }
+  const user = ref()
+  const token = ref()
+  const settingbool = ref({
+    wifiPlay: false,
+    wifiDownload:false,
+    autoPlay:false
+  })
+return { user, token,settingbool }
+}, {
+  persist: true
 })

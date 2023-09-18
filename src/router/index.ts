@@ -28,6 +28,42 @@ const router = createRouter({
         component: () => import('@/views/User/index.vue'),
         meta: { title: '我的' }
       },]
+    }, {
+      path: '/login',
+      component: () => import('@/views/Login/index.vue'),
+      meta: { title: '登录' }
+    }, {
+      path: '/personal',
+      component: () => import('@/views/User/PerSonal.vue'),
+      meta: { title: '个人资料' }
+    }, {
+      path: '/order',
+      component: () => import('@/views/User/OrderList.vue'),
+      meta: { title: '我的订单' }
+    }, {
+      path: '/balance',
+      component: () => import('@/views/User/MyBalance.vue'),
+      meta: { title: '我的余额' }
+    }, {
+      path: '/study',
+      component: () => import('@/views/User/MyStudy.vue'),
+      meta: { title: '我的学习' }
+    }, {
+      path: '/setting',
+      component: () => import('@/views/User/MySetting.vue'),
+      meta: { title: '设置' }
+    }, {
+      path: '/feedback',
+      component: () => import('@/views/User/FeedBack.vue'),
+      meta: { title: '意见反馈' }
+    }, {
+      path: '/we',
+      component: () => import('@/views/User/AboutWe.vue'),
+      meta: { title: '关于梦学谷' }
+    }, {
+      path: '/quizdetail',
+      component: () => import('@/views/Quiz/QuizDetail.vue'),
+      meta: { title: '问答详情' }
     }
   ]
 })

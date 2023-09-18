@@ -45,7 +45,7 @@ const onRefresh = () => {
     getdata()
     loading.value = true;
     onLoad();
-};
+}
 </script>
 <template>
     <div class='quiz'>
@@ -54,7 +54,8 @@ const onRefresh = () => {
             <van-tab v-for="item in tabs" :key="item.tab" :name="item.tab" :title="item.name">
                 <van-pull-refresh v-model="refreshing" @refresh="onRefresh">
                     <van-list v-model:loading="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
-                        <div class="box" v-for="item in list" :key="item.id">
+                        <div class="box" v-for="item in list" :key="item.id"
+                            @click="$router.push({ path: '/quizdetail', query: { id: item.id } })">
                             <h3>{{ item.title }}</h3>
                             <div>
                                 <span>{{ item.reply }} 回答 · {{ item.viewCount }} 浏览</span>

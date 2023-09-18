@@ -24,3 +24,11 @@ export type Data = {
     userId: number
     viewCount: number
 }
+
+
+export type HomePageConfig = {
+    current: number
+    size: number
+    sort?: string
+    isFree?:number
+}
